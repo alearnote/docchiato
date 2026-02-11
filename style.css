@@ -1,0 +1,126 @@
+*{box-sizing:border-box}
+
+:root{
+  --bg:#f6f8fb;
+  --text:#0b1220;
+  --panel:#ffffff;
+  --card:#ffffff;
+  --border:#d6dee8;
+  --btn:#eef3fb;
+  --btnText:#0b1220;
+  --hoverBorder:#6a8bb8;
+  --shadow:0 1px 0 rgba(0,0,0,.02);
+}
+
+:root[data-theme="dark"]{
+  --bg:#0b0f14;
+  --text:#e8eef6;
+  --panel:#121a24;
+  --card:#121a24;
+  --border:#223044;
+  --btn:#101826;
+  --btnText:#e8eef6;
+  --hoverBorder:#3b567b;
+  --shadow:0 1px 0 rgba(0,0,0,.25);
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans JP",sans-serif;
+}
+
+.wrap{max-width:900px;margin:0 auto;padding:24px}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.themeBox{display:flex;gap:8px;align-items:center}
+
+select,button{
+  padding:8px 12px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--btn);
+  color:var(--btnText);
+  cursor:pointer;
+}
+
+.panel{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+
+.modeButtons{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0}
+
+.hint{opacity:.85;margin-bottom:12px}
+
+.cards{
+  display:grid;
+  gap:12px;
+}
+@media(min-width:700px){
+  .cards{grid-template-columns:1fr 1fr}
+}
+
+.card{
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:var(--card);
+  padding:18px;
+  min-height:110px;
+  text-align:left;
+  transition:.1s;
+}
+.card:hover{border-color:var(--hoverBorder)}
+
+.result{font-weight:700;margin-top:14px;min-height:28px}
+.warning{opacity:.85}
+
+.score{display:flex;gap:16px;margin-bottom:12px;flex-wrap:wrap}
+
+.footer{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+
+/* ===== 注意事項モーダル ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modalContent {
+  background: var(--panel);
+  color: var(--text);
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 520px;
+  width: 90%;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.modalContent h2 {
+  margin-top: 0;
+}
+
+.modalContent ul {
+  padding-left: 1.2em;
+  line-height: 1.6;
+}
+
