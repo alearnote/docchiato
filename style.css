@@ -124,3 +124,18 @@ select,button{
   line-height: 1.6;
 }
 
+/* ===== スマホ用文字サイズ調整 ===== */
+@media (max-width: 600px) {
+
+  .card {
+    font-size: 18px;
+    line-height: 1.6;
+    padding: 20px;
+  }
+
+  .card b {
+    font-size: 20px;
+  }
+
+}
+
