@@ -222,7 +222,7 @@ const datasets = {
       { id: "m176", text: "さの氏が動画『おどる紲星あかり　BB素材+使用例』をniconicoに投稿", date: "2022-03-19" },
       { id: "m177", text: "Appleが従来の製品からデザインを一新したMac Proを発表(日本時間)。その外見が「おろし金」のようだと話題に", date: "2019-06-04" },
       { id: "m178", text: "TV番組『人志松本の酒のツマミになる話』内で、手元のタオルを褒めるように言われたアンミカ氏が「白って200色あんねん」と発言", date: "2021-08-20" },
-      { id: "m179", text: "ゲーム『妖怪惑星クラリス』サービス開始(カオスなキャラクターデザインやキャラクター名・フレーバーテキストをTwitterのフォロワーから募集する運営手法などで当時話題に)", date: "2017-12-10" },
+      { id: "m179", text: "ゲーム『妖怪惑星クラリス』サービス開始(カオスなキャラクターデザインやキャラクター名・フレーバーテキストをTwitterのフォロワーから募集する運営手法などで話題に)", date: "2017-12-10" },
       { id: "m180", text: "ディスカウントストア「ドン・キホーテ」がTwitterで公式マスコットキャラクターを「ドンペン」から「ド情ちゃん」に変更すると発表(その後即日撤回)", date: "2022-12-16" },
       { id: "m181", text: "ゲーム『カイジ -闇の黙示録-』サービス開始(あまりの低クオリティにネットをざわざわさせた)", date: "2022-01-20" },
       { id: "m182", text: "ゲーム『どうぶつタワーバトル(iOS/Android版)』サービス開始", date: "2017-03-31" },
@@ -564,11 +564,6 @@ function backToMode() {
 elA.addEventListener("click", () => answer("a"));
 elB.addEventListener("click", () => answer("b"));
 document.getElementById("next").addEventListener("click", renderNewQuestion);
-document.getElementById("reset").addEventListener("click", () => {
-  resetScore();
-  recentBanIds = [];
-  renderNewQuestion();
-});
 document.getElementById("backToMode").addEventListener("click", backToMode);
 
 document.querySelectorAll("#modeScreen button[data-mode]").forEach(btn => {
