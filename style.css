@@ -125,7 +125,7 @@ select,button{
 }
 
 /* ===== スマホ用文字サイズ調整 ===== */
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
 
   .card {
     font-size: 22px;
@@ -138,6 +138,7 @@ select,button{
   }
 
 }
+
 
 
 
