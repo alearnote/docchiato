@@ -128,14 +128,15 @@ select,button{
 @media (max-width: 600px) {
 
   .card {
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.6;
     padding: 20px;
   }
 
   .card b {
-    font-size: 20px;
+    font-size: 24px;
   }
 
 }
+
 
