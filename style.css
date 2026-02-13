@@ -200,4 +200,47 @@ select,button{
   margin: 10px 0 12px;
 }
 
+/* ===== 結果表示の下のボタン配置 ===== */
+.afterResultActions{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:8px;
+
+  /* 下のボタンは横幅そのままにしたいので伸ばさない */
+  align-items:flex-start;
+}
+
+/* 「次の問題」だけ横幅を画面いっぱいに */
+.nextFull{
+  width:100%;
+  padding:12px 12px;   /* 押しやすさUP（好みで調整OK） */
+}
+
+/* 次の問題ボタン：有効時（目立たせる） */
+#next:disabled{
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+/* 次の問題ボタン：無効時（押せない見た目） */
+#next:disabled{
+  background: var(--border);
+  border-color: var(--border);
+  color: var(--btnText);
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+:root{
+  /* 既存の変数の下あたりに追加 */
+  --primary:#eef3fb;
+  --primaryText:#0b1220;
+}
+
+:root[data-theme="dark"]{
+  --primary:#7599ce;
+  --primaryText:#000000;
+}
+
 
