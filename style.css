@@ -5,7 +5,7 @@
   --text:#0b1220;
   --panel:#ffffff;
   --card:#ffffff;
-  --border:#d6dee8;
+  --border:#bfc9d8;
   --btn:#eef3fb;
   --btnText:#0b1220;
   --hoverBorder:#6a8bb8;
@@ -15,12 +15,12 @@
 :root[data-theme="dark"]{
   --bg:#0b0f14;
   --text:#e8eef6;
-  --panel:#121a24;
+  --panel:#18222e;
   --card:#121a24;
-  --border:#223044;
+  --border:#777777;
   --btn:#101826;
   --btnText:#e8eef6;
-  --hoverBorder:#3b567b;
+  --hoverBorder:#6f9bd8;
   --shadow:0 1px 0 rgba(0,0,0,.25);
 }
 
@@ -45,7 +45,7 @@ body{
 select,button{
   padding:8px 12px;
   border-radius:10px;
-  border:1px solid var(--border);
+  border:2px solid var(--border);
   background:var(--btn);
   color:var(--btnText);
   cursor:pointer;
@@ -73,8 +73,9 @@ select,button{
 
 .card{
   border-radius:16px;
-  border:1px solid var(--border);
-  background:var(--card);
+  border:2px solid var(--border);
+  background:var(--btn);
+  color:var(--btnText);
   padding:18px;
   min-height:110px;
   text-align:left;
@@ -129,7 +130,7 @@ select,button{
   padding: 20px;
   max-width: 520px;
   width: 90%;
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   box-shadow: var(--shadow);
 }
 
@@ -196,7 +197,7 @@ select,button{
 
 .divider{
   border: none;
-  border-top: 1px solid var(--border);
+  border-top: 4px solid var(--border);
   margin: 10px 0 12px;
 }
 
@@ -214,7 +215,7 @@ select,button{
 /* 「次の問題」だけ横幅を画面いっぱいに */
 .nextFull{
   width:100%;
-  padding:12px 12px;   /* 押しやすさUP（好みで調整OK） */
+  padding:16px 12px;   /* 押しやすさUP（好みで調整OK） */
 }
 
 /* 次の問題ボタン：有効時（目立たせる） */
@@ -243,4 +244,12 @@ select,button{
   --primaryText:#000000;
 }
 
+/* ===== ゲーム画面の枠 ===== */
+.gamePanel{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
 
