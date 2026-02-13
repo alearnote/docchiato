@@ -255,7 +255,7 @@ const datasets = {
       { id: "m209", text: "料理研究家リュウジ氏がTwitterで公開したレシピに対する引用リツイートで、鍋から大きくはみ出たキャベツの画像と共に「リュウジ、信じてるからな」のコメントが投稿", date: "2025-11-26" },
       { id: "m210", text: "サイコロを振り＂特殊な役＂を出すことを目指すゲーム『NKODICE』がSteamで発売", date: "2021-05-29" },
       { id: "m211", text: "ゲーム『ガンダムトライヴ』公式Twitterが「9999無量大数ダメージロゴ」を配布", date: "2024-03-29" },
-      { id: "m212", text: "ゲーム『ホグワーツ・レガシー』発売に関連して、「薩摩ホグワーツ」が話題に(松永マグロ氏がTwitterに関連する内容を複数投稿していた中で、特に3万RT超えとなった「エ゛クズベリア゛ア゛ア゛ーーーーッ！！！！」から始まるツイートが投稿された日)", date: "2023-02-14" },
+      { id: "m212", text: "ゲーム『Undertale』の公式Twitterが突如謎の予告を行い、予告文最後に「イザ……出デヨ！DELTARUNE ！」と投稿されたのちゲーム『DELTARUNE』チャプター1が公開", date: "2018-10-31" },
       { id: "m213", text: "映画『RRR』日本で公開", date: "2022-10-21" },
       { id: "m214", text: "ユニバーサル・スタジオ・ジャパン『スーパー・ニンテンドー・ワールド』グランドオープン", date: "2021-03-18" },
       { id: "m215", text: "インターネット掲示板「2ちゃんねる」が「5ちゃんねる」に名称変更", date: "2017-10-01" },
@@ -315,6 +315,13 @@ const elResult = document.getElementById("result");
 const elWarning = document.getElementById("warning");
 const elCorrect = document.getElementById("correct");
 const elWrong = document.getElementById("wrong");
+const elNext = document.getElementById("next"); 
+
+function setNextEnabled(enabled) {
+  canNext = enabled;                 // Enterキー側の制御も揃える
+  elNext.disabled = !enabled;        // ボタン自体を無効化
+}
+
 
 // ====== 日付ユーティリティ ======
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -464,8 +471,8 @@ function isALater() {
 }
 
 function renderNewQuestion() {
-  locked = false;
-  canNext = false;
+locked = false;
+setNextEnabled(false);
   elResult.textContent = "";
   elWarning.textContent = "";
   elA.disabled = false;
@@ -487,6 +494,7 @@ if (!picked) {
     elA.disabled = true;
     elB.disabled = true;
     currentPair = null;
+  setNextEnabled(false); 
     return;
   }
 
@@ -504,7 +512,7 @@ function answer(choice) {
   if (locked || !currentPair) return;
 
   locked = true;
-  canNext = true;
+  setNextEnabled(true);
   elA.disabled = true;
   elB.disabled = true;
 
@@ -558,6 +566,7 @@ function backToMode() {
   modeScreen.style.display = "block";
   gameScreen.style.display = "none";
   currentPair = null;
+setNextEnabled(false);
 }
 
 // ====== マウス操作 ======
@@ -619,32 +628,6 @@ function openXIntent(text) {
 function isMobileLike() {
   return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 }
-
-async function shareToX() {
-  const text = buildResultTextForX();
-
-  // PCは intent を優先（Windows共有が出るのを避ける）
-  if (!isMobileLike()) {
-    openXIntent(text);
-    return;
-  }
-
-  // モバイルは共有→ダメなら intent
-  if (navigator.share) {
-    try {
-      await navigator.share({ text });
-      return;
-    } catch (e) {
-      openXIntent(text);
-      return;
-    }
-  }
-
-  openXIntent(text);
-}
-
-const shareBtn = document.getElementById("shareX");
-if (shareBtn) shareBtn.addEventListener("click", shareToX);
 
 // ===== 注意事項モーダル =====
 const openNoticeBtn = document.getElementById("openNotice");
