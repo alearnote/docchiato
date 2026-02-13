@@ -5,7 +5,7 @@
   --text:#0b1220;
   --panel:#ffffff;
   --card:#ffffff;
-  --border:#bfc9d8;
+  --border:#9da5b2;
   --btn:#f4f7fc;
   --btnText:#0b1220;
   --hoverBorder:#6a8bb8;
@@ -45,7 +45,7 @@ body{
 select,button{
   padding:8px 12px;
   border-radius:10px;
-  border:2px solid var(--border);
+  border:1px solid var(--border);
   background:var(--btn);
   color:var(--btnText);
   cursor:pointer;
@@ -73,7 +73,7 @@ select,button{
 
 .card{
   border-radius:16px;
-  border:2px solid var(--border);
+  border:1.5px solid var(--border);
   background:var(--btn);
   color:var(--btnText);
   padding:18px;
@@ -130,7 +130,7 @@ select,button{
   padding: 20px;
   max-width: 520px;
   width: 90%;
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
 
