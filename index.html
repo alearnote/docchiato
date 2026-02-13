@@ -39,32 +39,37 @@
     </section>
 
     <!-- ゲーム画面 -->
-    <section id="gameScreen" style="display:none;">
-<section class="score">
+<section id="gameScreen" style="display:none;">
 
-  <div class="scoreInfo">
-    <span>難易度: <b id="diffLabel"></b></span>
-    <span>正解: <b id="correct">0</b></span>
-    <span>不正解: <b id="wrong">0</b></span>
-  </div>
+  <div class="gamePanel">  <!-- ★ 追加 -->
+
+    <section class="score">
+      <div class="scoreInfo">
+        <span>難易度: <b id="diffLabel"></b></span>
+        <span>正解: <b id="correct">0</b></span>
+        <span>不正解: <b id="wrong">0</b></span>
+      </div>
+    </section>
+
+    <p class="hint">より新しい出来事（後に起きた方）を選択してください</p>
+
+    <section class="cards">
+      <button class="card" id="a"></button>
+      <button class="card" id="b"></button>
+    </section>
+
+    <p id="result" class="result"></p>
+    <p id="warning" class="warning"></p>
+
+    <div class="afterResultActions">
+      <button id="next" class="next nextFull">次の問題</button>
+      <button id="backToMode">難易度選択に戻る</button>
+    </div>
+
+  </div> <!-- ★ ここまで囲う -->
 
 </section>
 
-      <p class="hint">より新しい出来事（後に起きた方）を選択してください</p>
-
-      <section class="cards">
-        <button class="card" id="a"></button>
-        <button class="card" id="b"></button>
-      </section>
-
-      <p id="result" class="result"></p>
-      <p id="warning" class="warning"></p>
-<div class="afterResultActions">
-  <button id="next" class="next nextFull">次の問題</button>
-  <button id="backToMode">難易度選択に戻る</button>
-</div>
-
-    </section>
 
     <!-- 共通フッター（モード画面でもゲーム画面でも表示） -->
     <section class="footer">
