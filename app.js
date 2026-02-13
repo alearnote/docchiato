@@ -271,10 +271,10 @@ const datasets = {
 
 // ====== 難易度定義 ======
 const difficulty = {
-  free:   { label: "フリー（制限なし）", minDays: 0,   maxDays: Infinity },
-  easy:   { label: "かんたん（1年以上）", minDays: 365, maxDays: Infinity },
-  normal: { label: "ふつう（4か月〜1年）", minDays: 120, maxDays: 365 },
-  hard:   { label: "むずかしい（4か月以内）", minDays: 0,   maxDays: 120 },
+  free:   { label: "フリー(制限なし)", minDays: 0,   maxDays: Infinity },
+  easy:   { label: "かんたん(1年以上)", minDays: 365, maxDays: Infinity },
+  normal: { label: "ふつう(4か月〜1年)", minDays: 120, maxDays: 365 },
+  hard:   { label: "むずかしい(4か月以内)", minDays: 0,   maxDays: 120 },
 };
 
 // ====== 状態 ======
