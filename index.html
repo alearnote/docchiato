@@ -17,13 +17,15 @@
 
 <section class="score">
       </div>
-
-      <button id="openNotice">注意事項</button>
     </header>
 
     <!-- モード選択 -->
     <section id="modeScreen" class="panel">
-      <p class="hint">難易度を選んでください</p>
+      <p class="hint">
+  難易度を選んでください
+  <span id="questionCount" class="questionCount"></span>
+</p>
+
 
       <div class="modeButtons">
         <button data-mode="meme" data-diff="free" class="next">フリー</button>
@@ -81,25 +83,22 @@
           <option value="dark">ダーク</option>
         </select>
       </div>
-    </section>
 
-    <!-- 注意事項モーダル（画面共通にしたいのでmain直下に置くのが安全） -->
-    <div id="noticeModal" class="modal hidden">
-      <div class="modalContent">
-        <h2>このゲームについて</h2>
-        <ul>
-          <li>2つの選択肢のうち新しい方(後に起きた方)を当てるだけのゲームです</li>
-          <li>ノルマ等は用意していません</li>
-          <li>選択肢は主にネットミームや話題になった出来事で構成されています</li>
-          <li>選択肢の調査・選定は全て個人で行っており、内容には偏りがあります</li>
-          <li>選択肢によって文の表記に揺れがあります（敬称を略している等）</li>
-          <li>一部下ネタが含まれます</li>
-          <li>日付については繰り返しチェックを行っておりますが、間違いがありましたら申し訳ございません</li>
-          <li>本ゲームはAIサービス(ChatGPT、Gemini、Grok)利用の元制作されました</li>
-        </ul>
-        <button id="closeNotice">閉じる</button>
-      </div>
-    </div>
+<div class="noticeBox">
+  <h3>このゲームについて</h3>
+  <ul>
+    <li>2つの選択肢のうち新しい方(後に起きた方)を当てるゲームです</li>
+    <li>ノルマ等は用意していません</li>
+    <li>選択肢は主にネットミームや話題になった出来事で構成されています(2016年以降が中心ですが、それ以前の出来事も少し入れてます)</li>
+    <li>選択肢の調査・選定は全て個人で行っており、内容には偏りがあります</li>
+    <li>選択肢によって文の表記に揺れがあります(敬称を略している等)</li>
+    <li>一部下ネタが含まれます</li>
+    <li>日付については繰り返しチェックを行っておりますが、間違いがありましたら申し訳ございません</li>
+    <li>本ゲームはAIサービス(ChatGPT、Gemini、Grok)を利用しながら制作されました</li>
+  </ul>
+</div>
+
+    </section>
 
   </main>
 
