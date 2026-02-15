@@ -253,3 +253,12 @@ select,button{
   box-shadow: var(--shadow);
 }
 
+/* ゲーム中は注意事項を隠す */
+body.inGame .noticeBox { display: none; }
+
+.questionCount{
+  font-size: 13px;
+  opacity: .75;
+  margin-left: 8px;
+}
+
