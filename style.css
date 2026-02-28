@@ -258,3 +258,22 @@ body.inGame .noticeBox { display: none; }
   margin-left: 8px;
 }
 
+/* ===== クレジット ===== */
+.credit{
+  width:100%;
+  margin-top:14px;
+  padding-top:10px;
+  border-top:1px solid var(--border);
+  font-size:13px;
+  text-align:center;
+  opacity:.75;
+}
+
+.credit a{
+  color:var(--text);
+  text-decoration:none;
+}
+
+.credit a:hover{
+  text-decoration:underline;
+}
